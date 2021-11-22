@@ -1,0 +1,43 @@
+body {
+  background-color: rgb(29, 29, 31);
+}
+
+#heading {
+  color: whitesmoke;
+  text-align: center;
+}
+
+.nav-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.button {
+  color: rgb(25, 91, 117);
+  background-color: rgba(41, 41, 54, 0.8);
+  border: 2px solid rgb(25, 91, 117);
+  border-radius: 1rem;
+  padding: 1.2em;
+  font-size: small;
+  font-style: oblique;
+  cursor: pointer;
+  transition: all 400ms;
+}
+
+.button:hover {
+  transform: scale3d(1.2, 1.2, 1.2);
+  border-color: rgb(173, 222, 241);
+  color: rgb(173, 222, 241);
+  text-decoration-line: underline;
+}
+
+.new-array-btn {
+  margin-right: 2em;
+}
+
+.sort-btn {
+  margin-right: 0.6em;
+}
