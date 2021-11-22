@@ -1,4 +1,8 @@
 body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
   background-color: rgb(29, 29, 31);
 }
 
@@ -22,6 +26,7 @@ body {
   border-radius: 1rem;
   padding: 1.2em;
   font-size: small;
+  font-weight: 600;
   font-style: oblique;
   cursor: pointer;
   transition: all 400ms;
@@ -40,4 +45,19 @@ body {
 
 .sort-btn {
   margin-right: 0.6em;
+}
+
+.bars-section {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 70vw;
+  max-width: 70vw;
+  margin: 2em 1em;
+}
+
+.array-bars {
+  background-color: snow;
+  width: 0.4em;
+  display: block;
 }
