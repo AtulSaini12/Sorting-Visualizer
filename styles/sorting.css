@@ -50,15 +50,14 @@ body {
 .bars-section {
   display: flex;
   flex-direction: row;
-  margin: auto;
-  max-width: 700vw;
+  margin: 2em auto;
+  text-align: center;
+  justify-content: center;
+  max-width: 70vw;
   height: 70vh;
   max-width: 70vw;
-  margin: 2em 1em;
 }
 
 .array-bars {
-  background-color: snow;
-  width: 0.4em;
-  display: block;
+  background-color: rgb(179, 79, 179);
 }
