@@ -13,7 +13,7 @@ function generateNewArray() {
   for (let i = 0; i < 100; i++) {
     elements[i] = document.createElement("DIV");
     elements[i].classList.add("array-bars");
-    elements[i].style.marginRight = "1em";
+    elements[i].style.marginRight = "0.3em";
     let newHeight = numbers[i].toString();
 
     elements[i].innerHTML = newHeight;
