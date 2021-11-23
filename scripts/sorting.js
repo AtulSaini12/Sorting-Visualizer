@@ -12,14 +12,21 @@ for (let i = 0; i < 100; i++) {
 }
 
 function generateNewArray() {
-  console.log("clicked !!!!");
+  // console.log("clicked !!!!");
 
   for (let i = 0; i < 100; i++) {
     numbers[i] = Math.floor(Math.random() * 91) + 1;
     let newHeight = numbers[i].toString();
     elements[i].style.height = newHeight + "%";
+    elements[i].style.background = "rgb(179, 79, 179)";
   }
 }
 
 new_array_btn.addEventListener("click", generateNewArray);
 generateNewArray();
+
+async function swap(element1, element2) {
+  let height1 = element1.style.height;
+  element1.style.height = element2.style.height;
+  element2.style.height = height1;
+}
