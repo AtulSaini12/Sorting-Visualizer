@@ -12,8 +12,6 @@ for (let i = 0; i < 100; i++) {
 }
 
 function generateNewArray() {
-  // console.log("clicked !!!!");
-
   for (let i = 0; i < 100; i++) {
     numbers[i] = Math.floor(Math.random() * 91) + 1;
     let newHeight = numbers[i].toString();
@@ -25,7 +23,7 @@ function generateNewArray() {
 new_array_btn.addEventListener("click", generateNewArray);
 generateNewArray();
 
-async function swap(element1, element2) {
+function swap(element1, element2) {
   let height1 = element1.style.height;
   element1.style.height = element2.style.height;
   element2.style.height = height1;

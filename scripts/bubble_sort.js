@@ -12,7 +12,7 @@ async function bubble_sort() {
             resolve(), 100;
           })
         );
-        await swap(bars[j], bars[j + 1]);
+        swap(bars[j], bars[j + 1]);
       }
       bars[j].style.background = "rgb(179, 79, 179)";
       bars[j + 1].style.background = "rgb(179, 79, 179)";
