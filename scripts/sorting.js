@@ -7,7 +7,7 @@ for (let i = 0; i < 100; i++) {
   elements[i] = document.createElement("DIV");
   elements[i].classList.add("array-bars");
   elements[i].style.marginRight = "0.1em";
-  elements[i].style.width = "2.5em";
+  elements[i].style.width = "3em";
   bars_section.appendChild(elements[i]);
 }
 
