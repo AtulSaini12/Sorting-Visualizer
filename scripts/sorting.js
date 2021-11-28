@@ -28,6 +28,42 @@ function deleteBars() {
   bars.innerHTML = "";
 }
 
+function disableSortingButtons() {
+  document.querySelector("#selection-btn").disabled = true;
+  document.querySelector("#bubble-btn").disabled = true;
+  document.querySelector("#insertion-btn").disabled = true;
+  document.querySelector("#merge-btn").disabled = true;
+  document.querySelector("#quick-btn").disabled = true;
+  // console.log("disabled sorting");
+  document.getElementById("size").style.color = "grey";
+}
+
+function enableSortingButtons() {
+  document.querySelector("#selection-btn").disabled = false;
+  document.querySelector("#bubble-btn").disabled = false;
+  document.querySelector("#insertion-btn").disabled = false;
+  document.querySelector("#merge-btn").disabled = false;
+  document.querySelector("#quick-btn").disabled = false;
+  console.log("enabled sorting");
+  document.getElementById("size").style.color = "whitesmoke";
+}
+
+function disableNewArrayBtn() {
+  new_array_btn.disabled = true;
+}
+
+function enableNewArrayBtn() {
+  new_array_btn.disabled = false;
+}
+
+function disableSizeSlider() {
+  numbersArraySize.disabled = true;
+}
+
+function enableSizeSlider() {
+  numbersArraySize.disabled = false;
+}
+
 new_array_btn.addEventListener("click", () => {
   generateNewArray(numbersArraySize.value);
 });
@@ -53,5 +89,5 @@ numbersArraySize.addEventListener("input", () => {
 });
 
 delayElement.addEventListener("input", () => {
-  delay = 320 - parseInt(delayElement.value);
+  delay = 310 - parseInt(delayElement.value);
 });

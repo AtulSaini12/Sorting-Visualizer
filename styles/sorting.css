@@ -1,28 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Niconne&display=swap");
+
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100vw;
+  font-family: "Montserrat";
   background-color: rgb(29, 29, 31);
 }
 
 #heading {
   color: whitesmoke;
   text-align: center;
+  font-size: 2rem;
+  margin: 1em auto;
 }
 
 .nav-section {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  /* grid-template-columns: 0.5fr 1fr 2.5fr; */
   margin-left: 1em;
   margin-right: 1em;
+  max-height: 60px;
 }
 
 .button {
-  color: rgb(25, 91, 117);
   background-color: rgba(41, 41, 54, 0.8);
-  border: 2px solid rgb(25, 91, 117);
   border-radius: 1rem;
   padding: 1.2em;
   font-size: small;
@@ -32,19 +37,36 @@ body {
   transition: all 400ms;
 }
 
-.button:hover {
-  transform: scale3d(1.2, 1.2, 1.2);
-  border-color: rgb(173, 222, 241);
-  color: rgb(173, 222, 241);
+.button:enabled and .button:hover {
+  transform: scale3d(1.03, 1.09, 1.01);
   text-decoration-line: underline;
+}
+
+.button:disabled {
+  border: none;
+  text-decoration: none;
+  cursor: none;
 }
 
 .new-array-btn {
   margin-right: 2em;
+  max-height: 60px;
+  color: chartreuse;
+  border: 2px solid lawngreen;
 }
 
 .sort-btn {
   margin-right: 0.6em;
+  color: cyan;
+  border: 2px solid aquamarine;
+  flex-wrap: 2;
+  flex-shrink: 3;
+}
+
+.right-nav {
+  margin-left: 1em;
+  display: flex;
+  flex-direction: row;
 }
 
 .bars-section {
@@ -60,12 +82,14 @@ body {
 
 .array-bars {
   background-color: rgb(179, 79, 179);
+  transition: all 200ms ease;
 }
 
 .mid-nav {
   display: flex;
+  justify-content: center;
+  max-height: 60px;
   padding: 0.5em;
-  justify-content: space-between;
 }
 
 .mid-nav span {
@@ -73,4 +97,107 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 1.2rem;
+  margin-left: 1em;
+}
+
+.new-array-btn:disabled {
+  color: darkgreen;
+}
+
+.sort-btn:disabled {
+  color: darkred;
+}
+
+@media screen and (max-width: 1120px) {
+  .nav-section {
+    display: grid;
+  }
+  .new-array-btn {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .mid-nav {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .right-nav {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin: 1em auto;
+  }
+
+  #bars-section {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .button {
+    padding: 1em;
+  }
+  .new-array-btn {
+    font-size: 0.7rem;
+  }
+
+  .sort-btn {
+    font-size: 0.7rem;
+  }
+
+  .mid-nav span {
+    font-size: 1rem;
+    margin-left: 0.1em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .button {
+    padding: 1em;
+  }
+  .new-array-btn {
+    font-size: 0.7rem;
+  }
+
+  .right-nav {
+    margin-top: 2em;
+  }
+
+  .sort-btn {
+    font-size: 0.5rem;
+  }
+
+  input[type="range"] {
+    width: 90px;
+  }
+
+  .mid-nav span {
+    font-size: 0.8rem;
+  }
+
+  .bars-section {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sort-btn {
+    padding: 0.5em;
+  }
+  .new-array-btn {
+    font-size: 0.5rem;
+  }
+
+  input[type="range"] {
+    width: 60px;
+  }
+  .mid-nav span {
+    font-size: 0.8rem;
+  }
 }

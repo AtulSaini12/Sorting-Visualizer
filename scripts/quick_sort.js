@@ -59,5 +59,11 @@ async function quick_sort(bars, left, right) {
 const quick_btn = document.querySelector("#quick-btn");
 quick_btn.addEventListener("click", async function () {
   const bars = document.querySelectorAll(".array-bars");
+  disableSortingButtons();
+  disableSizeSlider();
+  disableNewArrayBtn();
   await quick_sort(bars, 0, bars.length - 1);
+  enableSortingButtons();
+  enableSizeSlider();
+  enableNewArrayBtn();
 });

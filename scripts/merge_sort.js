@@ -97,5 +97,11 @@ async function merge_sort(bars, left, right) {
 const merge_btn = document.querySelector("#merge-btn");
 merge_btn.addEventListener("click", async function () {
   const bars = document.querySelectorAll(".array-bars");
+  disableSortingButtons();
+  disableNewArrayBtn();
+  disableSizeSlider();
   await merge_sort(bars, 0, bars.length - 1);
+  enableSortingButtons();
+  enableSizeSlider();
+  enableNewArrayBtn();
 });

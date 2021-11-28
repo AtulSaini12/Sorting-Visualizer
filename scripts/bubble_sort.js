@@ -6,6 +6,8 @@ async function bubble_sort() {
     for (let j = 0; j < bars.length - 1 - i; j++) {
       bars[j].style.background = "red";
       bars[j + 1].style.background = "blue";
+      await waitDelay(delay);
+
       if (parseInt(bars[j].style.height) > parseInt(bars[j + 1].style.height)) {
         await waitDelay(delay);
 
@@ -21,5 +23,11 @@ async function bubble_sort() {
 
 const bubble_btn = document.querySelector("#bubble-btn");
 bubble_btn.addEventListener("click", async function () {
+  disableSortingButtons();
+  disableSizeSlider();
+  disableNewArrayBtn();
   await bubble_sort();
+  enableSortingButtons();
+  enableSizeSlider();
+  enableNewArrayBtn();
 });
