@@ -7,11 +7,8 @@ async function bubble_sort() {
       bars[j].style.background = "red";
       bars[j + 1].style.background = "blue";
       if (parseInt(bars[j].style.height) > parseInt(bars[j + 1].style.height)) {
-        await new Promise((resolve) =>
-          setTimeout(() => {
-            resolve(), 100;
-          })
-        );
+        await waitDelay(delay);
+
         swap(bars[j], bars[j + 1]);
       }
       bars[j].style.background = "rgb(179, 79, 179)";

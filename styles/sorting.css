@@ -61,3 +61,16 @@ body {
 .array-bars {
   background-color: rgb(179, 79, 179);
 }
+
+.mid-nav {
+  display: flex;
+  padding: 0.5em;
+  justify-content: space-between;
+}
+
+.mid-nav span {
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+}

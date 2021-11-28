@@ -6,11 +6,7 @@ async function partition(bars, left, right) {
 
   for (let barIndex = left; barIndex < right; barIndex++) {
     bars[barIndex].style.background = "cyan";
-    await new Promise((resolve) =>
-      setTimeout(() => {
-        resolve(), 100;
-      })
-    );
+    await waitDelay(delay);
 
     if (
       parseInt(bars[barIndex].style.height) < parseInt(bars[right].style.height)
@@ -19,32 +15,20 @@ async function partition(bars, left, right) {
       swap(bars[pivotIndex], bars[barIndex]);
       bars[pivotIndex].style.background = "yellow";
       bars[barIndex].style.background = "yellow";
-      await new Promise((resolve) =>
-        setTimeout(() => {
-          resolve(), 100;
-        })
-      );
+      await waitDelay(delay);
     } else {
       bars[barIndex].style.background = "orange";
     }
   }
 
-  await new Promise((resolve) =>
-    setTimeout(() => {
-      resolve(), 100;
-    })
-  );
+  await waitDelay(delay);
   pivotIndex++;
   swap(bars[pivotIndex], bars[right]);
 
   bars[right].style.background = "orange";
   bars[pivotIndex].style.background = "green";
 
-  await new Promise((resolve) =>
-    setTimeout(() => {
-      resolve(), 100;
-    })
-  );
+  await waitDelay(delay);
 
   for (let barInd = 0; barInd < bars.length; barInd++) {
     if (bars[barInd].style.background != "green") {

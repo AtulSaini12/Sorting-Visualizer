@@ -9,11 +9,8 @@ async function insertion_sort() {
     let current_bar_height = bars[i].style.height;
     bars[i].style.background = "blue";
 
-    await new Promise((resolve) =>
-      setTimeout(() => {
-        resolve(), 100;
-      })
-    );
+    await waitDelay(delay);
+
     while (
       j >= 0 &&
       parseInt(bars[j].style.height) > parseInt(current_bar_height)
@@ -22,11 +19,8 @@ async function insertion_sort() {
       bars[j + 1].style.height = bars[j].style.height;
       j -= 1;
 
-      await new Promise((resolve) =>
-        setTimeout(() => {
-          resolve(), 100;
-        })
-      );
+      await waitDelay(delay);
+
       for (let ind = i; ind >= 0; ind--) {
         bars[ind].style.background = "green";
       }

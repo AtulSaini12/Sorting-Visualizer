@@ -1,26 +1,37 @@
-const bars_section = document.getElementById("bars-section");
 const new_array_btn = document.getElementById("new-array-btn");
-var numbers = [];
-var elements = [];
+let delay = 200;
+let numbersArraySize = document.querySelector("#size-input");
+let delayElement = document.querySelector("#speed-input");
 
-for (let i = 0; i < 100; i++) {
-  elements[i] = document.createElement("DIV");
-  elements[i].classList.add("array-bars");
-  elements[i].style.marginRight = "0.1em";
-  elements[i].style.width = "3em";
-  bars_section.appendChild(elements[i]);
-}
+function generateNewArray(noOfBars = 60) {
+  deleteBars();
 
-function generateNewArray() {
-  for (let i = 0; i < 100; i++) {
-    numbers[i] = Math.floor(Math.random() * 91) + 1;
-    let newHeight = numbers[i].toString();
-    elements[i].style.height = newHeight + "%";
-    elements[i].style.background = "rgb(179, 79, 179)";
+  let numbers = [];
+  for (let i = 0; i < noOfBars; i++) {
+    numbers.push(Math.floor(Math.random() * 200) + 1);
+  }
+
+  const bars_section = document.getElementById("bars-section");
+  for (let i = 0; i < noOfBars; i++) {
+    const bar = document.createElement("div");
+    bar.classList.add("array-bars");
+    bar.style.marginRight = "0.1em";
+    bar.style.width = "3em";
+    bar.style.height = `${numbers[i] * 2}px`;
+    bar.style.background = "rgb(179, 79, 179)";
+    bars_section.appendChild(bar);
   }
 }
 
-new_array_btn.addEventListener("click", generateNewArray);
+function deleteBars() {
+  const bars = document.querySelector("#bars-section");
+  bars.innerHTML = "";
+}
+
+new_array_btn.addEventListener("click", () => {
+  generateNewArray(numbersArraySize.value);
+});
+
 generateNewArray();
 
 function swap(element1, element2) {
@@ -28,3 +39,19 @@ function swap(element1, element2) {
   element1.style.height = element2.style.height;
   element2.style.height = height1;
 }
+
+async function waitDelay(time) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("");
+    }, time);
+  });
+}
+
+numbersArraySize.addEventListener("input", () => {
+  generateNewArray(parseInt(numbersArraySize.value));
+});
+
+delayElement.addEventListener("input", () => {
+  delay = 320 - parseInt(delayElement.value);
+});

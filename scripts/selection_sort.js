@@ -10,11 +10,7 @@ async function selection_sort() {
       if (
         parseInt(bars[j].style.height) < parseInt(bars[minBarInd].style.height)
       ) {
-        await new Promise((resolve) =>
-          setTimeout(() => {
-            resolve(), 100;
-          })
-        );
+        await waitDelay(delay);
 
         swap(bars[minBarInd], bars[j]);
       }

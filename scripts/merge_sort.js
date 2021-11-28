@@ -15,41 +15,27 @@ async function merge(bars, left, mid, right) {
   let rightArray = new Array(length2);
 
   for (let i = 0; i < length1; i++) {
-    await new Promise((resolve) =>
-      setTimeout(() => {
-        resolve(), 100;
-      })
-    );
+    await waitDelay(delay);
+
     bars[left + i].style.background = "orange";
     leftArray[i] = bars[left + i].style.height;
   }
 
   for (let i = 0; i < length2; i++) {
-    await new Promise((resolve) =>
-      setTimeout(() => {
-        resolve(), 100;
-      })
-    );
+    await waitDelay(delay);
+
     bars[mid + i + 1].style.background = "yellow";
     rightArray[i] = bars[mid + i + 1].style.height;
   }
 
-  await new Promise((resolve) =>
-    setTimeout(() => {
-      resolve(), 100;
-    })
-  );
+  await waitDelay(delay);
 
   let leftArrayPointer = 0;
   let rightArrayPointer = 0;
   let barsPointer = left;
 
   while (leftArrayPointer < length1 && rightArrayPointer < length2) {
-    await new Promise((resolve) =>
-      setTimeout(() => {
-        resolve(), 100;
-      })
-    );
+    await waitDelay(delay);
 
     if (
       parseInt(leftArray[leftArrayPointer]) <=
@@ -70,11 +56,7 @@ async function merge(bars, left, mid, right) {
   }
 
   while (leftArrayPointer < length1) {
-    await new Promise((resolve) =>
-      setTimeout(() => {
-        resolve(), 100;
-      })
-    );
+    await waitDelay(delay);
 
     await compare(bars, left, right, barsPointer);
 
@@ -84,11 +66,7 @@ async function merge(bars, left, mid, right) {
   }
 
   while (rightArrayPointer < length2) {
-    await new Promise((resolve) =>
-      setTimeout(() => {
-        resolve(), 100;
-      })
-    );
+    await waitDelay(delay);
 
     await compare(bars, left, right, barsPointer);
 
