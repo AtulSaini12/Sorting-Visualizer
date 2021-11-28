@@ -1,13 +1,13 @@
-var bars_section = document.getElementById("bars-section");
-var new_array_btn = document.getElementById("new-array-btn");
+const bars_section = document.getElementById("bars-section");
+const new_array_btn = document.getElementById("new-array-btn");
 var numbers = [];
 var elements = [];
 
 for (let i = 0; i < 100; i++) {
   elements[i] = document.createElement("DIV");
   elements[i].classList.add("array-bars");
-  elements[i].style.marginRight = "0.3em";
-  elements[i].style.width = "1.5em";
+  elements[i].style.marginRight = "0.1em";
+  elements[i].style.width = "2.5em";
   bars_section.appendChild(elements[i]);
 }
 
