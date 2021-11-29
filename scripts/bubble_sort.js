@@ -57,3 +57,5 @@ bubble_btn.addEventListener("click", async function () {
   enableSizeSlider();
   enableNewArrayBtn();
 });
+
+//this file has the bubble sort algorithm

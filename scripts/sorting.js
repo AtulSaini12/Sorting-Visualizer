@@ -118,3 +118,5 @@ numbersArraySize.addEventListener("input", () => {
 delayElement.addEventListener("input", () => {
   delay = 310 - parseInt(delayElement.value);
 });
+
+//Important functions are in this file

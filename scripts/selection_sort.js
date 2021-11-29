@@ -81,3 +81,5 @@ selection_btn.addEventListener("click", async function () {
   enableSizeSlider();
   enableNewArrayBtn();
 });
+
+//this file has the selection sort algorithm

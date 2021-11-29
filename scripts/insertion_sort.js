@@ -71,3 +71,5 @@ insertion_btn.addEventListener("click", async function () {
   enableSizeSlider();
   enableNewArrayBtn();
 });
+
+//this file has the insertion sort algorithm

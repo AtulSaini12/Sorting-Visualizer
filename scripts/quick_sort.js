@@ -114,3 +114,5 @@ quick_btn.addEventListener("click", async function () {
   enableSizeSlider();
   enableNewArrayBtn();
 });
+
+//this file has the quick sort algorithm

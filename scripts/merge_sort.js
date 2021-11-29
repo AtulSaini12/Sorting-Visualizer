@@ -152,3 +152,5 @@ merge_btn.addEventListener("click", async function () {
   enableSizeSlider();
   enableNewArrayBtn();
 });
+
+//this file has the merge sort algorithm
